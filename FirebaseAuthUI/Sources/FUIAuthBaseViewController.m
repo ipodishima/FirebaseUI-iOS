@@ -356,7 +356,8 @@ static NSString *const kAuthUICodingKey = @"authUI";
 }
 
 - (void)dismissNavigationControllerAnimated:(BOOL)animated completion:(void (^)(void))completion {
-     if (self.navigationController.presentingViewController == nil){
+     if (self.navigationController.presentingViewController == nil ||
+         !self.authUI.shouldAutomaticallyDismiss) {
          if (completion){
              completion();
          }

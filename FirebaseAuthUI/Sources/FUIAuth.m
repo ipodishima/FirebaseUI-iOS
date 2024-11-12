@@ -108,6 +108,7 @@ static NSString *const kFirebaseAuthUIFrameworkMarker = @"FirebaseUI-iOS";
   if (self) {
     _auth = auth;
     _interactiveDismissEnabled = YES;
+    _shouldAutomaticallyDismiss = YES;
   }
   return self;
 }

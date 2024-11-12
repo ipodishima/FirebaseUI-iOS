@@ -195,6 +195,11 @@ __attribute__((deprecated("Instead use authUI:didSignInWithAuthDataResult:error:
  */
 @property(nonatomic, assign) BOOL shouldHideCancelButton;
 
+/** @property shouldAutomaticallyDismiss
+    @brief Whether to automatically dismiss the UI when a sign in or an error occurs, defaults to YES.
+    */
+@property(nonatomic, assign) BOOL shouldAutomaticallyDismiss;
+
 /** @property interactiveDismissEnabled
     @brief Whether or not interactive dismiss should be enabled on iOS 13 and above devices.
  */

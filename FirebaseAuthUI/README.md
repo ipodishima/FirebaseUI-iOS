@@ -440,3 +440,20 @@ func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, er
   // Handle successful login
 }
 ```
+
+## Integrate authentication screen in an existing modal view controller
+
+By default, the authentication screen dismisses when a sign in is successful. This results in calling the delegate after the screen is dismissed.
+It can cause several issues in those kind of flows:
+- You want to dismiss the screen manually after a successful sign in because your delegate belongs to the presented screen.
+- You want to push another screen after a successful sign in.
+
+To solve this issue, you can set the `shouldAutoDismiss` property to false on the `FUIAuth` instance. This will prevent the screen from dismissing automatically after a successful sign in.
+
+```swift
+authUI?.shouldAutoDismiss = false
+```
+
+```objective-c
+authUI.shouldAutoDismiss = NO;
+```
